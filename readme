@@ -1,3 +1,14 @@
+## 📘 Disclaimer
+
+This project includes a web scraper built with Python and Selenium that extracts publicly visible job listings from [ActuaryList.com](https://www.actuarylist.com) for educational and portfolio purposes only.
+
+- The scraper is used strictly to demonstrate technical skills in web scraping, database management, and full-stack development.
+- The data is not stored, redistributed, or used for any commercial purposes.
+- If you are the owner of the content being scraped and have concerns, please contact me and I will promptly remove any related code or data.
+
+All trademarks and content belong to their respective owners.
+
+
 Environment Setup
 Backend (Flask)
 Requirements:
