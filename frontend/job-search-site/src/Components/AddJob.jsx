@@ -12,7 +12,12 @@ export default function AddJob({ closeBox, updateJob, title }) {
   const { fetchJobs } = useContext(JobContext);
   const [loading, setLoading] = useState(true);
   const [isSubmitted,setIsSubmitted]=useState(false);
-
+  
+  const getTodayDate = () => {
+    const today = new Date();
+    return today.toISOString().split("T")[0]; // e.g., "2025-06-18"
+  };
+  
   useEffect(() => {
     setLoading(true);
     if (title) {
@@ -28,7 +33,7 @@ export default function AddJob({ closeBox, updateJob, title }) {
     title: "",
     company: "",
     location: "",
-    posting_date: "",
+    posting_date: getTodayDate(),
     job_type: "",
     tags: "",
   });
@@ -54,8 +59,9 @@ export default function AddJob({ closeBox, updateJob, title }) {
 
     if(updateJob)
     {
-        try{
- const response=await axios.put('http://127.0.0.1:5000/jobs/update_job',formData)
+      
+     try{
+    const response=await axios.put('http://127.0.0.1:5000/jobs/update_job',formData)
         console.log("the response for update job is",response);
         if(response.status===200)
         {

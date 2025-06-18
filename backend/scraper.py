@@ -89,12 +89,6 @@ while True:
         print("no more pages")
         break
     
-    
-
-
-
-
-# Wait to see the result before closing
 input("Press Enter to close the browser...")
 
 # Print page title

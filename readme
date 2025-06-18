@@ -1,0 +1,80 @@
+Environment Setup
+Backend (Flask)
+Requirements:
+
+Python 3.10+
+
+pip (Python package manager)
+
+MySQL installed locally (or provide a cloud DB like PlanetScale if needed)
+
+1. Clone the repository:
+
+git clone https://github.com/ammarchopra1/scrapping-jobs-web-app.git
+
+2. Create and activate a virtual environment:
+
+python -m venv venv
+source venv/bin/activate    # On Linux/macOS
+venv\Scripts\activate       # On Windows
+
+
+3. Install dependencies:
+
+pip install -r requirements.txt
+
+
+4. Data Base Configuration
+
+Start your local MySQL server and create a database named using query :
+
+CREATE DATABASE joblist_db;
+
+.env file already have "DATABASE_URL=mysql+pymysql://root:root123@localhost/joblist_db"
+
+The database tables will be automatically created by SQLAlchemy when you run the backend (app.py), based on the models defined in models/job.py.
+
+Make sure your MySQL user (root in this case) has permission to create and modify tables in joblist_db.
+
+if everything goes well Run the Flask server:
+
+python app.py 
+
+Tables will be automatically created in your database.
+
+The server will start running on http://127.0.0.1:5000/
+
+Tables will be automatically created in your database.
+
+
+You can test the API root by visiting:
+http://127.0.0.1:5000/
+and it should display: FLASK app is running
+
+
+Flask CORS is already configured to allow requests from your React frontend.
+
+After running the python app.py it will setup database tables routes everything then run python scraper.py file 
+The scraper will automatically run, launch a browser, and fetch all job card data as per the specified requirements—such as job title, company name, etc. It first checks whether each job already exists in the database based on the provided criteria. If a job is not found, it inserts the new data. This process continues until all relevant jobs are added to the MySQL database. The goal of storing all jobs is to ensure that the frontend can efficiently load and display data, maintaining responsiveness and performance
+
+
+Frontend Requirements
+
+Node.js 18+
+
+npm or yarn
+
+npm install (This reads the package.json file and installs all dependencies (like axios, react-router-dom, @mui/material, etc.))
+
+
+start the server using npm start or npm run dev
+
+
+
+https://www.loom.com/share/5d586374b8894c6ea052ae5a016a10be?sid=c765991f-2bcf-4b17-bea0-d575452c119e
+
+https://www.loom.com/share/0aac85dd7b044301865ded8be11c5a7a?sid=86965e09-0254-4b54-adac-b1716645fa42
+
+https://www.loom.com/share/ce2e7a20a4284873b85fe3b8bbe10680?sid=7cf5ac14-c956-440f-aca4-e4afb29525b8
+
+https://www.loom.com/share/dd4f90cceac146309f3f0691a2fa17db?sid=c219caee-9eb3-4a8b-8fd2-4486b64a2f24
