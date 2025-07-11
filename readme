@@ -8,6 +8,14 @@ This project includes a web scraper built with Python and Selenium that extracts
 
 All trademarks and content belong to their respective owners.
 
+⚠️ Note: The web scraper originally used for demonstration has been removed out of respect for website policies. The application now works with static or demo data.
+
+This project still showcases:
+- Full-stack architecture (React + Flask/Django + MySQL/MongoDB)
+- Frontend filtering, pagination, and dynamic rendering
+- Clean, scalable code for job board applications
+
+
 
 Environment Setup
 Backend (Flask)
